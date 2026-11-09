@@ -1,6 +1,6 @@
-# Everfield — A life outside
+# ANZ Landscaping — A life outside
 
-A complete Astro + React landscaping website built from the supplied 35.5-second visual reference. The original brand is Everfield. The cream editorial grid, floating navigation, orange motion panels, pinned illustrated process, immersive image storytelling, lilac split composition and orange footer follow the reference's sequence and proportions.
+A complete Astro + React landscaping website built from the supplied 35.5-second visual reference. The website is branded for ANZ Landscaping. The cream editorial grid, floating navigation, orange motion panels, pinned illustrated process, immersive image storytelling, lilac split composition and orange footer follow the reference's sequence and proportions.
 
 ## Run locally
 
@@ -23,7 +23,7 @@ Astro produces a portable static site in `dist/`. The Sites identity and static 
 
 ## Experience
 
-- GSAP ScrollTrigger pins and scrubs the three-stage garden story over 4.2 viewport heights. Illustrations draw in, planting appears, the garden expands into a neighbourhood, and a seasonal chart draws across the final panel.
+- GSAP ScrollTrigger pins and scrubs the three-stage garden story over 5 viewport heights. Illustrations draw in, planting appears, the garden expands into a neighbourhood, and a seasonal chart draws across the final panel.
 - Lenis is synchronized to the GSAP ticker. Touch uses native scrolling.
 - A small original WebGL shader creates the moving orange and purple fabric surfaces. Rendering is limited to 30 fps and pauses drawing outside the viewport. CSS provides a no-WebGL fallback.
 - Project images open an accessible native dialog with previous/next browsing.
@@ -70,7 +70,7 @@ Additional images are from Pexels, downloaded and optimized locally:
 | forest | [Woodland, 1671325](https://www.pexels.com/photo/1671325/) |
 | sunlight | [Botanical foliage, 807598](https://www.pexels.com/photo/807598/) |
 
-Garden studies are clearly identified as illustrative. They are not claims of completed commissions. Typography: Instrument Serif and DM Sans from Google Fonts. The brand mark and architectural and ecosystem SVG illustrations are original code-native artwork.
+The garden studies are clearly identified as illustrative. They are not claims of completed commissions. Typography: Instrument Serif and DM Sans from Google Fonts. The brand mark and architectural and ecosystem SVG illustrations are original code-native artwork.
 
 
 ## Verification
@@ -86,3 +86,19 @@ Garden studies are clearly identified as illustrative. They are not claims of co
 - Verification captures: `qa/desktop.jpg` and `qa/mobile.jpg`.
 
 The browser tool's frame-rate probe did not produce a usable sample, so no measured FPS claim is made. Canvas drawing is capped at 30 fps, skipped offscreen, and images are responsive; scroll and layout behavior were checked directly in the browser.
+
+
+### Building-drawing refinement
+
+The installation scene now uses 107 independent strokes with fractional dash offsets. Ground plan, structure, details, hardscape and planting are sequenced in overlapping passes. Filled surfaces follow their outlines. Pattern definitions are excluded from the animation.
+
+One SVG-unit camera matrix expands the entire scene around a fixed anchor. Every drawing tween has an explicit start value so reversing or resizing does not capture a partially drawn state. Accessibility state updates only when the active process step changes. ScrollTrigger catch-up is kept to 0.4 seconds alongside Lenis.
+
+Browser checks verified the camera starts without a position jump, the same intermediate drawing state is restored after forward/reverse scrubbing, and the mobile illustration stays below its copy with no horizontal overflow. The local preview is the current review version.
+
+
+### ANZ Landscaping content
+
+The local design preview uses ANZ Landscaping throughout the interface, page metadata, illustration labels and downloaded garden brief. Bengaluru and service wording were verified against [the official ANZ Landscaping website](https://anzlandscaping.in/). Service selections cover villa and commercial landscaping, terrace and vertical gardens, and maintenance; budget preferences are expressed in rupees. Stock and generated visuals remain clearly identified as design studies.
+
+The checkout directory and existing hosted Site origin retain their original technical identifiers. The current review version is served at http://localhost:4377/.
